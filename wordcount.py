@@ -10,8 +10,9 @@ def word_counts(path):
 
     words = re.findall(r'\w+', open(path).read().lower())
     words_dict_items = Counter(words).items()
-    for each_tuple in words_dict_items:
-        print(f"{each_tuple[0]}\t{each_tuple[1]}")
+    
+    for key, value in sorted(words_dict_items):
+        print(f"{key}\t{value}")
 
     print(f"\nThat was {len(words_dict_items)} different words.")
 
